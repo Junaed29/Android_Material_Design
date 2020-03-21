@@ -7,7 +7,7 @@
     <alpha
         android:fromAlpha="0.1"
         android:toAlpha="1.0"
-        android:duration = "2200"/>
+        android:duration = "1500"/>
 
     <!--fromXDelta="100%" means view will come from the Right Side-->
     <!--fromXDelta="-100%" means view will come from the Left Side-->

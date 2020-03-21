@@ -1,18 +1,16 @@
 package com.example.androidmaterialdesign;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
+import android.util.Pair;
 import android.view.WindowManager;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import butterknife.BindAnim;
 import butterknife.BindView;
@@ -41,7 +39,7 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_spalash_screen);
         ButterKnife.bind(this);
 
@@ -51,9 +49,24 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashScreen.this,DashboardActivity.class));
+                Intent intent = new Intent(SplashScreen.this, LoginActivity.class);
+                startActivity(intent);
                 finish();
+                /* For Shared TransitionAnimation
+                 * Pair[] pairs = new Pair[2];
+                 *                 pairs[0] = new Pair<>(bauetLogoImageView, "logo_image");
+                 *                 pairs[1] = new Pair<>(bauetNameTextView, "logo_title");
+                 *
+                 *                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                 *                     ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SplashScreen.this, pairs);
+                 *                     startActivity(intent,options.toBundle());
+                 *                     finish();
+                 *                 }else {
+                 *                     startActivity(intent);
+                 *                     finish();
+                 *                 }
+                 */
             }
-        },SCREEN_DELAY);
+        }, SCREEN_DELAY);
     }
 }

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:transitionName="logo_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_with_name" />
+
+    <TextView
+        android:transitionName="logo_title"
+        android:paddingLeft="6dp"
+        android:id="@+id/welcomeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome To BAUET"
+        android:textSize="40sp"
+        app:fontFamily="@font/bungee" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/userNameEditTextId"
+            app:hintAnimationEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:lines="1"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordEditTextId"
+            app:hintAnimationEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Password"
+            app:passwordToggleTintMode="multiply"
+            app:passwordToggleTint="@color/colorAccent"
+            app:passwordToggleEnabled="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/forgetPasswordButtonId"
+            android:layout_width="wrap_content"
+            android:text="Forget Password"
+            android:gravity="right"
+            android:elevation="0dp"
+            android:backgroundTint="#FFFFFF"
+            android:textColor="#000"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_gravity="right"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/logInButtonId"
+            android:backgroundTint="#2196F3"
+            android:layout_width="match_parent"
+            android:text="GO"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="#000"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signUpButtonId"
+            android:backgroundTint="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:text="New User ? Sign Up"
+            android:textSize="25sp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#000"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>
