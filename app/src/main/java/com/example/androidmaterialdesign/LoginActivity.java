@@ -71,4 +71,22 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(LoginActivity.this,RegistrationActivity.class);
         startActivity(intent);
     }
+
+    public void logInGoButtonClick(View view) {
+        String password = passwordEditText.getEditText().getText().toString();
+        String username = userNameEditText.getEditText().getText().toString();
+
+        password = "dash";
+        username = "dash";
+        if (username.isEmpty()){
+            userNameEditText.setError("Field can not be empty");
+        }else if (password.isEmpty()){
+            passwordEditText.setError("Field can not be empty");
+        }else if(username.equals("dash")){
+            Intent intent = new Intent(LoginActivity.this,DashboardActivity.class);
+            startActivity(intent);
+            passwordEditText.getEditText().setText("");
+            userNameEditText.getEditText().setText("");
+        }
+    }
 }

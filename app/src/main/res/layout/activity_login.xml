@@ -74,6 +74,7 @@
             android:hint="Password"
             app:hintAnimationEnabled="true"
             app:passwordToggleEnabled="true"
+            app:errorIconDrawable="@null"
             app:passwordToggleTint="@color/colorAccent"
             app:passwordToggleTintMode="multiply">
 
@@ -96,6 +97,7 @@
             android:textColor="#000" />
 
         <com.google.android.material.button.MaterialButton
+            android:onClick="logInGoButtonClick"
             android:transitionName="go_btn"
             android:id="@+id/logInButtonId"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
