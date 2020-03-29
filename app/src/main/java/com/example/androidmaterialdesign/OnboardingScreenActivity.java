@@ -41,16 +41,23 @@ public class OnboardingScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onboarding_screen);
 
+        /*******************************  For Full Screen  *************************/
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        /*******************************  For View Item  *************************/
         images = new ArrayList<>();
         headings = new ArrayList<>();
         description = new ArrayList<>();
 
+        /*******************************  Finding View From Layout  *************************/
         skipButton = findViewById(R.id.skipSlideButtonId);
         nextButton = findViewById(R.id.nextSlideButtonId);
         letsGetStartedButton = findViewById(R.id.lets_get_startedBtnId);
 
+        viewPager = findViewById(R.id.sliderId);
+        dotsLinearLayout = findViewById(R.id.dotsLayout);
+
+        /*******************************  Adding picture and message into the arrayList  *************************/
         images.add(R.drawable.first_slide_image);
         images.add(R.drawable.second_slide_image);
         images.add(R.drawable.third_slide_image);
@@ -66,15 +73,16 @@ public class OnboardingScreenActivity extends AppCompatActivity {
         description.add(R.string.third_slide_disc);
         description.add(R.string.first_slide_disc);
 
-        viewPager = findViewById(R.id.sliderId);
-        dotsLinearLayout = findViewById(R.id.dotsLayout);
 
+        /*******************************  Creating Adapter Object and adding with viewpager  *************************/
         adapter = new SliderViewPagerAdapter(this,images,headings,description);
 
         viewPager.setAdapter(adapter);
 
+        /*******************************  '0' for first position  *************************/
         addDots(0);
 
+        /*******************************  Adding Listener with view pager  *************************/
         viewPager.addOnPageChangeListener(changeListener);
     }
 
@@ -102,6 +110,7 @@ public class OnboardingScreenActivity extends AppCompatActivity {
 
         }
 
+        /*******************************  Page numbers  *************************/
         @Override
         public void onPageSelected(int position) {
             currentPosition = position;
@@ -125,15 +134,18 @@ public class OnboardingScreenActivity extends AppCompatActivity {
         }
     };
 
+    /*******************************  Button onClick from xml  *************************/
     public void skipSlide(View view) {
         startActivity(new Intent(OnboardingScreenActivity.this,LoginActivity.class));
         finish();
     }
 
+    /*******************************  Button onClick from xml  *************************/
     public void nextSlide(View view) {
         viewPager.setCurrentItem(currentPosition+1);
     }
 
+    /*******************************  Button onClick from xml  *************************/
     public void lesGetStarted(View view) {
         startActivity(new Intent(OnboardingScreenActivity.this,LoginActivity.class));
         finish();

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nev_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Home" />
+        <item
+            android:id="@+id/nev_plane"
+            android:icon="@drawable/fly"
+            android:title="By Plane" />
+        <item
+            android:id="@+id/nev_boat"
+            android:icon="@drawable/boat"
+            android:title="By Boat" />
+    </group>
+
+
+    <item android:title="profile">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nev_login"
+                    android:icon="@drawable/login"
+                    android:title="Login" />
+
+                <item
+                    android:id="@+id/nev_logout"
+                    android:icon="@drawable/logout"
+                    android:title="Logout" />
+
+                <item
+                    android:id="@+id/nev_profile"
+                    android:icon="@drawable/user_profile"
+                    android:title="Profile" />
+            </group>
+        </menu>
+    </item>
+
+
+    <item android:title="Communication">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nev_rate"
+                android:icon="@drawable/rate_us"
+                android:title="Rate Us" />
+        </menu>
+    </item>
+</menu>

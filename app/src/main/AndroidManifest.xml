@@ -9,10 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OnboardingScreenActivity"></activity>
+        <activity
+            android:name=".BoatActivity"
+            android:label="@string/title_activity_boat"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".OnboardingScreenActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".DashboardActivity" />
+        <activity android:name=".DashboardActivity"
+            android:theme="@style/AppTheme.NoActionBar_TransparentStatusBar"/>
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

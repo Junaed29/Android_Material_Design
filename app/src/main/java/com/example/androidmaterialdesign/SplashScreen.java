@@ -51,10 +51,15 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void run() {
 
+                /*********************************************For the OnBoardingScreen****************************************/
                 onBoardingScreenSharedPreferences = getSharedPreferences("onBoardingScreenSharedPreferences",MODE_PRIVATE);
+
+                /******************************* if there is any "firstTime" then return it's value or return default value 'true' ********************************/
                 boolean isFirstTime = onBoardingScreenSharedPreferences.getBoolean("firstTime",true);
 
                 if (isFirstTime){
+                    /******************************* make the "firstTime" value 'false' ********************************/
+                    /******************************* With using of SharedPreferences.Editor ********************************/
                     SharedPreferences.Editor editor = onBoardingScreenSharedPreferences.edit();
                     editor.putBoolean("firstTime",false);
                     editor.apply();
